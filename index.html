@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flex_panel</title>
+
+
+
+             <!-- style part -->
+
+
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body{
+      width: 100%;
+      height: 100vh;
+    }
+
+    .panels{
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      flex-direction: row;
+    }
+
+    .panel{
+      color: white;
+      
+      display: flex;
+      flex-wrap: nowrap;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+      transition: all 0.5s cubic-bezier(0.215, 0.610, 0.355, 1);
+
+
+      & h1{
+        font-size: 4rem;
+        text-transform: capitalize;
+        font-weight: 600;
+      }
+      
+      & p{
+        font-size: 2.5rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        position: absolute;
+
+      }
+
+
+        & .top{
+      top: -5%;
+      transition: all 0.7s cubic-bezier(0.215, 0.610, 0.355, 1);
+      }
+        & .down{
+      bottom: -5%;
+      transition: all 0.7s cubic-bezier(0.215, 0.610, 0.355, 1);
+      }
+    }
+    
+    .panel1{
+      color: black;
+      background-image: url('https://images.unsplash.com/photo-1535642147056-37b87c7e3042?q=80&w=689&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    }
+    
+    .panel2{
+      color: white;
+      background-image: url('https://images.unsplash.com/photo-1519638399535-1b036603ac77?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    }
+
+    .panel3{
+      background-image: url('https://images.unsplash.com/photo-1613487971624-24f87ffdbfc5?q=80&w=683&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    }
+
+    .panel4{
+      
+      background-image: url('https://images.unsplash.com/photo-1729683566193-32ddc7cef073?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    }
+
+    .panel5{
+     
+      background-image: url('https://plus.unsplash.com/premium_photo-1726768860087-ae68e0a5b401?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTd8fE1BS0UlMjBZT1VSJTIwTUFSS3xlbnwwfHwwfHx8MA%3D%3D');
+    }
+
+    /* .top{
+      top: -5%;
+    }
+    .down{
+      bottom: -5%;
+    } */
+
+    .addclass{
+    flex: 3.2;
+
+      & .top{
+       font-weight: 600;
+       top: 34%;
+      }
+        & .down{
+       font-weight: 600;
+       bottom: 34%;
+      }
+     
+    }
+
+  </style>
+</head>
+
+          <!-- html part -->
+
+
+<body>
+  <div class="panels">
+    <div class="panel panel1">
+      <p class="top">trust</p>
+      <h1>your</h1>
+      <p class="down">journey</p>
+    </div>
+    <div class="panel panel2">
+      <p class="top">keep</p>
+      <h1>moving</h1>
+      <p class="down">forward</p>
+    </div>
+    <div class="panel panel3">
+      <p class="top">work</p>
+      <h1>in</h1>
+      <p class="down">silence</p>
+    </div>
+    <div class="panel panel4">
+      <p class="top">fail</p>
+      <h1>learn</h1>
+      <p class="down">repeat</p>
+    </div>
+    <div class="panel panel5">
+      <p class="top">make</p>
+      <h1>your</h1>
+      <p class="down">mark</p>
+    </div>
+    
+  </div>
+         
+
+            <!-- script part -->
+
+            
+  <script>
+
+    function change(){
+      this.classList.add('addclass')
+
+    }
+
+    function end(){
+      this.classList.remove('addclass')
+    }
+
+
+    const allpanel=document.querySelectorAll('.panel')
+    allpanel.forEach((e)=>{
+      e.addEventListener('mousemove',change)
+      e.addEventListener('mouseleave',end)
+    })
+  </script>
+  
+</body>
+</html>
